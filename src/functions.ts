@@ -1,12 +1,8 @@
 import path from "path";
 import fs from "fs";
-import {
-  DokiThemeDefinitions,
-  MasterDokiThemeDefinition,
-  StringDictionary,
-} from "./types";
-import { GroupToNameMapping } from "./GroupToNameMapping";
-import { resolvePaths } from "./BuildFuctions";
+import {DokiThemeDefinitions, MasterDokiThemeDefinition, StringDictionary,} from "./types";
+import {GroupToNameMapping} from "./GroupToNameMapping";
+import {resolvePaths} from "./BuildFuctions";
 
 type DokiTheme = {
   path: string;
@@ -73,13 +69,13 @@ export function resolveStickerPath(
   sticker: string,
   currentDirectory: string
 ) {
-  const { appDefinitionDirectoryPath } = resolvePaths(currentDirectory);
+  const {appDefinitionDirectoryPath} = resolvePaths(currentDirectory);
 
   const stickerPath = path.resolve(
     path.resolve(themeDefinitionPath, ".."),
     sticker
   );
-  return stickerPath.substr(
+  return stickerPath.substring(
     appDefinitionDirectoryPath.length + "/definitions".length
   );
 }
@@ -116,7 +112,7 @@ export function composeTemplateWithCombini<T, R>(
     const fullParentTemplates = parentTemplateNames
       .map(parentTemplateName => templateNameToTemplate[parentTemplateName]);
 
-    // combine parents first, so that we 
+    // combine parents first, so that we
     // know what will be overidden in the base/grandparent template
     const combinedParents = fullParentTemplates
       .map(parentTemplate => attributeResolver(parentTemplate))
@@ -128,7 +124,7 @@ export function composeTemplateWithCombini<T, R>(
       );
 
     if (!grandParentsToFillOut.length) {
-      // no grand parents, so these parents are the base
+      // no grandparents, so these parents are the base
       // of the template, apply the child overrides
       return combiniFunction(
         combinedParents,
@@ -191,21 +187,21 @@ export function resolveTemplate<T, R>(
 
 export function shadeHexColor(color: string, percent: number) {
   const f = parseInt(color.slice(1), 16),
-      t = percent < 0 ? 0 : 255,
-      p = percent < 0 ? percent * -1 : percent,
-      R = f >> 16,
-      G = (f >> 8) & 0x00ff,
-      B = f & 0x0000ff;
+    t = percent < 0 ? 0 : 255,
+    p = percent < 0 ? percent * -1 : percent,
+    R = f >> 16,
+    G = (f >> 8) & 0x00ff,
+    B = f & 0x0000ff;
   return (
-      "#" +
-      (
-          0x1000000 +
-          (Math.round((t - R) * p) + R) * 0x10000 +
-          (Math.round((t - G) * p) + G) * 0x100 +
-          (Math.round((t - B) * p) + B)
-      )
-          .toString(16)
-          .slice(1)
+    "#" +
+    (
+      0x1000000 +
+      (Math.round((t - R) * p) + R) * 0x10000 +
+      (Math.round((t - G) * p) + G) * 0x100 +
+      (Math.round((t - B) * p) + B)
+    )
+      .toString(16)
+      .slice(1)
   );
 }
 
@@ -313,7 +309,7 @@ export function constructNamedColorTemplate(
   );
 
   // do not really need to resolve, as there are no
-  // &someName& colors, but what ever.
+  // &someName& colors, but whatever.
   const resolvedColors = applyNamedColors(
     resolvedColorTemplate,
     resolvedNameColors
@@ -377,13 +373,13 @@ export const readTemplates = (templatePaths: string[]): TemplateTypes => {
     .reduce(
       (accum: TemplateTypes, templateRepresentation) => {
         const templateType = templateRepresentation.type;
-        if(!accum[templateType]) {
+        if (!accum[templateType]) {
           accum[templateType] = {}
         }
-        
+
         accum[templateType][
           templateRepresentation.template.name
-        ] = templateRepresentation.template;
+          ] = templateRepresentation.template;
         return accum;
       },
       {
@@ -393,6 +389,7 @@ export const readTemplates = (templatePaths: string[]): TemplateTypes => {
       }
     );
 };
+
 /**end internal functions */
 
 export function walkDir(dir: string): Promise<string[]> {
@@ -417,12 +414,11 @@ function resolveTemplateVariable(
   templateVariables: StringDictionary<string>
 ): string {
   const isToRGB = templateVariable.startsWith("^");
-  const cleanTemplateVariable = templateVariable.substr(isToRGB ? 1 : 0);
-  const hexColor = resolveColor(
+  const cleanTemplateVariable = templateVariable.substring(isToRGB ? 1 : 0);
+  return resolveColor(
     getColorFromTemplate(templateVariables, cleanTemplateVariable),
     templateVariables
   );
-  return hexColor;
 }
 
 export function fillInTemplateScript(
@@ -502,7 +498,7 @@ export function toRGBArray(
   hexColor: string | [number, number, number]
 ): [number, number, number] {
   if (typeof hexColor === "string") {
-    const hex = parseInt(hexColor.substr(1), 16);
+    const hex = parseInt(hexColor.substring(1), 16);
     return [(hex & 0xff0000) >> 16, (hex & 0xff00) >> 8, hex & 0xff];
   }
   return hexColor;
@@ -522,17 +518,16 @@ export function toRGBArray(
 export function rgbToHsl([r, g, b]: [number, number, number]) {
   (r /= 255), (g /= 255), (b /= 255);
 
-  var max = Math.max(r, g, b),
+  let max = Math.max(r, g, b),
     min = Math.min(r, g, b);
-  var h,
+  let h,
     s,
     l = (max + min) / 2;
 
   if (max == min) {
-    h = s = 0; // achromatic
+    h = 0; // achromatic
   } else {
-    var d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    const d = max - min;
 
     switch (max) {
       case r:

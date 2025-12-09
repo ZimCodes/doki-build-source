@@ -1,5 +1,7 @@
-Doki Theme Build Source
+Doki Theme Build Source - Maintanence
 ---
+
+> This is a maintanence fork of the main repo, [UnThrottled/doki-build-source](https://github.com/doki-theme/doki-build-source).
 
 You think I maintain 50+ themes manually? These are the common building blocks for constructing all the Doki themes
 
@@ -10,7 +12,7 @@ You think I maintain 50+ themes manually? These are the common building blocks f
 # Getting Started
 
 Once you have cloned this repository, you'll need to install the required dependencies to run
-the [scripts defined here](https://github.com/doki-theme/doki-build-source/blob/main/package.json#L10).
+the [scripts defined here](https://github.com/ZimCodes/doki-build-source/blob/main/package.json#L10).
 
 This can be accomplished by running this command at the root of this repository:
 
