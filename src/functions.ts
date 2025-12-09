@@ -516,8 +516,9 @@ export function toRGBArray(
  * @return  Array           The HSL representation
  */
 export function rgbToHsl([r, g, b]: [number, number, number]) {
-  (r /= 255), (g /= 255), (b /= 255);
-
+  r /= 255;
+  g /= 255;
+  b /= 255;
   let max = Math.max(r, g, b),
     min = Math.min(r, g, b);
   let h,
