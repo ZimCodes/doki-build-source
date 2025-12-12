@@ -21,7 +21,7 @@
   "license": "MIT",
   "homepage": "https://github.com/ZimCodes/doki-build-source#readme",
   "devDependencies": {
-    "@types/node": "^25.0.0",
+    "@types/node": "^25.0.1",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@4.12.0"
