@@ -28,19 +28,19 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@types/node", "npm:25.5.0"],\
+          ["@types/node", "npm:25.9.3"],\
           ["doki-build-source", "workspace:."],\
-          ["typescript", "patch:typescript@npm%3A6.0.2#optional!builtin<compat/typescript>::version=6.0.2&hash=5786d5"]\
+          ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
     ]],\
     ["@types/node", [\
-      ["npm:25.5.0", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-25.5.0-49c7b83d02-10c0.zip/node_modules/@types/node/",\
+      ["npm:25.9.3", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-25.9.3-8c1909db0e-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
-          ["@types/node", "npm:25.5.0"],\
-          ["undici-types", "npm:7.18.2"]\
+          ["@types/node", "npm:25.9.3"],\
+          ["undici-types", "npm:7.24.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -49,27 +49,27 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@types/node", "npm:25.5.0"],\
+          ["@types/node", "npm:25.9.3"],\
           ["doki-build-source", "workspace:."],\
-          ["typescript", "patch:typescript@npm%3A6.0.2#optional!builtin<compat/typescript>::version=6.0.2&hash=5786d5"]\
+          ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
     ]],\
     ["typescript", [\
-      ["patch:typescript@npm%3A6.0.2#optional!builtin<compat/typescript>::version=6.0.2&hash=5786d5", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/typescript-patch-a9c0baa67b-10c0.zip/node_modules/typescript/",\
+      ["patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/typescript-patch-bfb0cdd3b9-10c0.zip/node_modules/typescript/",\
         "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A6.0.2#optional!builtin<compat/typescript>::version=6.0.2&hash=5786d5"]\
+          ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["undici-types", [\
-      ["npm:7.18.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/undici-types-npm-7.18.2-3e6d69d829-10c0.zip/node_modules/undici-types/",\
+      ["npm:7.24.6", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/undici-types-npm-7.24.6-8759b28e34-10c0.zip/node_modules/undici-types/",\
         "packageDependencies": [\
-          ["undici-types", "npm:7.18.2"]\
+          ["undici-types", "npm:7.24.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5779,7 +5779,7 @@ function getPathForDisplay(p) {
   return npath.normalize(npath.fromPortablePath(p));
 }
 
-const [major, minor] = process.versions.node.split(`.`).map((value) => parseInt(value, 10));
+const [major, minor, patch] = process.versions.node.split(`.`).map((value) => parseInt(value, 10));
 const WATCH_MODE_MESSAGE_USES_ARRAYS = major > 19 || major === 19 && minor >= 2 || major === 18 && minor >= 13;
 
 function readPackageScope(checkPath) {

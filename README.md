@@ -4,7 +4,7 @@ Doki Theme Build Source - Maintanence
 > [!IMPORTANT]
 > This is a maintanence fork of the main repo, [UnThrottled/doki-build-source](https://github.com/doki-theme/doki-build-source).
 
-You think I maintain 50+ themes manually? These are the common building blocks for constructing all the Doki themes
+You think I maintain 50+ themes manually? These are the common building blocks for constructing all the Doki themes.
 
 # Required Software
 
@@ -15,7 +15,7 @@ You think I maintain 50+ themes manually? These are the common building blocks f
 Once you have cloned this repository, you'll need to install the required dependencies to run
 the [scripts defined here](https://github.com/ZimCodes/doki-build-source/blob/main/package.json#L10).
 
-This can be accomplished by running this command at the root of this repository:
+This can be achieved by running this command at the root of this repository:
 
 ```shell
 yarn
@@ -30,7 +30,7 @@ script will generate the `lib/` directory at the root of this repo that will con
 yarn build
 ```
 
-All the node scripts used by the various Doki theme plugins will be using the `Common JS` code.
+All the node scripts used by the various Doki theme plugins will be using the ~~`Common JS`~~ `ESM` code.
 
 ## Handy Development Setup
 
@@ -52,7 +52,7 @@ yarn link doki-build-source
 ```
 
 However, that is half the battle. If you want to see your changes take place, you can run `yarn build` every time you
-make changes. We do have technology though, `yarn watch:cjs` will start a process that will watch the typescript files
+make changes. We do have technology though, `yarn watch` will start a process that will watch the typescript files
 and transpile the new build javascript on changes.
 
 It's also important to remember the above when you come back to a project and are wondering why you are not seeing your
