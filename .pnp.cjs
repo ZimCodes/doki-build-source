@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@types/node", "npm:26.1.0"],\
+          ["@types/node", "npm:26.1.1"],\
           ["doki-build-source", "workspace:."],\
           ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"]\
         ],\
@@ -36,10 +36,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/node", [\
-      ["npm:26.1.0", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-26.1.0-47714ed5b9-10c0.zip/node_modules/@types/node/",\
+      ["npm:26.1.1", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-node-npm-26.1.1-7a7a9f32f4-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
-          ["@types/node", "npm:26.1.0"],\
+          ["@types/node", "npm:26.1.1"],\
           ["undici-types", "npm:8.3.0"]\
         ],\
         "linkType": "HARD"\
@@ -49,7 +49,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@types/node", "npm:26.1.0"],\
+          ["@types/node", "npm:26.1.1"],\
           ["doki-build-source", "workspace:."],\
           ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"]\
         ],\
